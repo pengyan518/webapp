@@ -1,0 +1,25 @@
+.header {
+  min-height: 66px;
+  background-color: #0266b4;
+
+  .wrapper {
+    @include container(964px);
+  }
+}
+
+.header-brand-text {
+  color: #fff;
+  font-weight: 700;
+
+  @extend %uppercase;
+
+  padding-top: 15px;
+  float: left;
+
+  @include pre(span(22 of 964 0));
+
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 11px;
+}

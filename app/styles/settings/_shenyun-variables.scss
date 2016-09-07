@@ -143,8 +143,8 @@ $city-border: #ddd;
 
 $open-sans-condensed: "open-sans-condensed", sans-serif;
 
-// $roboto-condensed: "Roboto Condensed";
-$roboto-condensed: $open-sans-condensed;
+$roboto-condensed: "Roboto Condensed";
+$roboto: "Roboto", sans-serif;
 $open-sans-condensed: $roboto-condensed;
 $open-sans: $roboto-condensed;
 
@@ -248,11 +248,9 @@ $docs-color: $brand-primary;
 /* $font-size-base: 13px;*/
 
 // $themes: "../../src/themes";
-$bootstrap: "../../../framework/bootstrap/sass/bootstrap" !default;
 $icon: "../../../font/icon/" !default;
 $font: "../../../font/" !default;
 $fancybox-path: "../../../library/fancybox/";
-$icon-font-path: "../../../framework/bootstrap3/fonts/";
 $fa-font-path: "../../../framework/font-awesome/fonts/";
 
 /* imgPath -------------------------*/

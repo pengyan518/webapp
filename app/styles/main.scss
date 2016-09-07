@@ -1,13 +1,29 @@
 $icon-font-path: "../fonts/";
 
 // bower:scss
+
+// endbower
+
 @import "compass";
 @import "bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "bower_components/susy/sass/susy";
 @import "bower_components/breakpoint-sass/stylesheets/breakpoint";
-@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "settings/shenyun-variables";
+@import "settings/ltr-directions";
 
-// endbower
+// Utility classes
+@import "bower_components/sass-mediaqueries/media-queries";
+@import "sass-mixins-library/inline-block";
+@import "sass-mixins-library/parent-hover";
+@import "sass-mixins-library/pseudo-elements";
+@import "settings/shenyun-mixins";
+@import "utils/shenyun-clearfix";
+@import "utils/shenyun-placeholder";
+
+@import "layouts/header";
+@import "layouts/footer";
+@import "pages/index";
 
 .browserupgrade {
   margin: 0.2em 0;
@@ -18,8 +34,10 @@ $icon-font-path: "../fonts/";
 
 /* Space out content a bit */
 body {
-  padding-top: 20px;
+  // padding-top: 20px;
   padding-bottom: 20px;
+
+  @extend %roboto;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -33,14 +51,6 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
 }
 
 /* Custom page footer */

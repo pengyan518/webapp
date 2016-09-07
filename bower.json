@@ -7,7 +7,8 @@
     "susy": "^2.2.12",
     "bourbon": "^4.2.7",
     "breakpoint-sass": "^2.7.0",
-    "compass-mixins": "^1.0.2"
+    "compass-mixins": "^1.0.2",
+    "sass-mediaqueries": "^1.6.1"
   },
   "overrides": {
     "bootstrap-sass": {
