@@ -23,3 +23,76 @@
   line-height: 40px;
   padding-bottom: 11px;
 }
+
+#wal-share-content {
+  @include sm-col-flex(240, 970, right, null, null);
+
+  text-align: left;
+
+  @extend %sm-pad;
+}
+
+#wal-top-video-share-btn {
+  @extend %open-sans-condensed-300;
+
+  @extend %uppercase;
+
+  // background-color: rgba(180, 148, 65, 0.65);
+  border-color: transparent;
+  padding: 5px 28px;
+}
+
+#wal-video-share-area-placeholder {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  margin-left: 2px;
+
+  @include breakpoint($tbMobile) {
+    top: 20px;
+  }
+
+
+  .shenyun-glyphs {
+    // color: #a6a391;
+    color: $syso-light-yellow;
+    font-size: 30px;
+    text-decoration: none;
+    display: inline-block;
+
+    @include pad(5px);
+
+    &:first-child {
+      @include breakpoint($tbBreak) {
+        margin-left: 0;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: $syso-light-yellow-hover;
+    }
+  }
+}
+
+.header-video-link {
+  float: right;
+  margin-top: 10px;
+}
+
+#share-trigger-wrapper {
+  position: relative;
+  float: right;
+  padding-top: 10px;
+  margin-left: 6px;
+
+  // min-height: 100px;
+  min-width: 150px;
+
+  @include breakpoint($tbMobile) {
+    min-height: 47px;
+
+    // padding-top: 20px;
+  }
+}

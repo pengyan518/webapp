@@ -8,7 +8,8 @@
     "bourbon": "^4.2.7",
     "breakpoint-sass": "^2.7.0",
     "compass-mixins": "^1.0.2",
-    "sass-mediaqueries": "^1.6.1"
+    "sass-mediaqueries": "^1.6.1",
+    "jquery-hoverintent": "^1.8.1"
   },
   "overrides": {
     "bootstrap-sass": {
