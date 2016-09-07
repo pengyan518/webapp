@@ -1,0 +1,196 @@
+/* ================================ sm ================================ */
+// Generate the small columns
+@mixin flex-column($width, $container-width, $breakPoint, $orientation) {
+  @extend %mobile-block;
+  @include breakpoint($breakPoint) {
+    float: $orientation;
+    width: percentage($width / $container-width);
+  }
+}
+
+/* ==========================================================================
+   Generate columns @peng
+   ========================================================================== */
+
+/* ================================ xs ================================ */
+// Generate the extra small columns
+@mixin sy-make-xs-column($width, $container-width) {
+  position: relative;
+  width: percentage($width / $container-width);
+  min-height: 1px;
+  @media (min-width: $screen-xs-min) {
+    float: left;
+    width: percentage($width / $container-width);
+  }
+}
+
+@mixin sy-make-xs-column-flex($width, $container-width, $orientation) {
+  @extend %mobile-block;
+  @media (min-width: $screen-xs-min) {
+    float: $orientation;
+    width: percentage($width / $container-width);
+  }
+}
+
+@mixin sy-make-xs-column-inline($width, $container-width) {
+  position: relative;
+  display: inline-block;
+  width: percentage($width / $container-width);
+  min-height: 1px;
+}
+
+@mixin sy-make-sm-column($width, $container-width) {
+  @extend %mobile-block;
+  // Calculate width based on number of columns available
+  @include breakpoint(768px) {
+    float: left;
+    width: percentage($width / $container-width);
+  }
+}
+
+@mixin sy-make-sm-column-flex($width, $container-width, $orientation) {
+  @extend %mobile-block;
+  @include breakpoint(768px) {
+    display: inline-block;
+    float: $orientation;
+    width: percentage($width / $container-width);
+  }
+}
+
+@mixin sy-make-sm-column-inline($width, $container-width) {
+  @extend %mobile-block;
+  @include breakpoint(768px) {
+    @include inline-block(top, true);
+    width: percentage($width / $container-width);
+  }
+}
+
+/* ================================ md ================================ */
+// Generate the medium columns
+@mixin sy-make-md-column($width, $container-width) {
+  @extend %mobile-block;
+  text-align: center;
+  // Calculate width based on number of columns available
+  @media (min-width: $screen-md-min) {
+    float: left;
+    width: percentage($width / $container-width);
+  }
+}
+
+@mixin sy-make-md-column-flex($width, $container-width, $orientation) {
+  @extend %mobile-block;
+  @media (min-width: $screen-md-min) {
+    display: inline-block;
+    float: $orientation;
+    width: percentage($width / $container-width);
+  }
+}
+
+@mixin sy-make-md-column-inline($width, $container-width) {
+  @extend %mobile-block;
+  text-align: center;
+  // Calculate width based on number of columns available
+  @media (min-width: $screen-md-min) {
+    display: inline-block;
+    float: none;
+    width: percentage($width / $container-width);
+    vertical-align: middle;
+  }
+}
+
+/* ================================ lg ================================ */
+// Generate the large columns
+@mixin sy-make-lg-column($width, $container-width) {
+  @extend %mobile-block;
+  // Calculate width based on number of columns available
+  @media (min-width: $screen-lg-min) {
+    float: left;
+    width: percentage($width / $container-width);
+  }
+}
+
+@mixin sy-make-lg-column-flex($width, $container-width, $orientation) {
+  @extend %mobile-block;
+  @media (min-width: $screen-lg-min) {
+    display: inline-block;
+    float: $orientation;
+    width: percentage($width / $container-width);
+  }
+}
+
+// Generate the large columns
+@mixin sy-make-lg-column-inline($width, $container-width) {
+  @extend %mobile-block;
+  // Calculate width based on number of columns available
+  @media (min-width: $screen-lg-min) {
+    display: inline-block;
+    float: none;
+    width: percentage($width / $container-width);
+  }
+}
+
+/* ================================ offset ================================ */
+// Generate the extra small column offsets
+@mixin sy-make-xs-column-offset($marginLeft, $marginRight, $container-width) {
+  @media (min-width: $screen-xs-min) {
+    margin-left: percentage($marginLeft / $container-width);
+    margin-right: percentage($marginRight / $container-width);
+  }
+}
+
+// Generate the small column offsets
+@mixin sy-make-sm-column-offset($marginLeft, $marginRight, $container-width) {
+  @media (min-width: $screen-sm-min) {
+    margin-left: percentage($marginLeft / $container-width);
+    margin-right: percentage($marginRight / $container-width);
+  }
+}
+
+// Generate the medium column offsets
+@mixin sy-make-md-column-offset($marginLeft, $marginRight, $container-width) {
+  @media (min-width: $screen-md-min) {
+    margin-left: percentage($marginLeft / $container-width);
+    margin-right: percentage($marginRight / $container-width);
+  }
+}
+
+// Generate the large column offsets
+@mixin sy-make-lg-column-offset($marginLeft, $marginRight, $container-width) {
+  @media (min-width: $screen-lg-min) {
+    margin-left: percentage($marginLeft / $container-width);
+    margin-right: percentage($marginRight / $container-width);
+  }
+}
+
+/* ================================ padding ================================ */
+// Generate the extra small padding
+@mixin sy-make-xs-padding($paddingLeft, $paddingRight, $container-width) {
+  @media (min-width: $screen-xs-min) {
+    padding-left: percentage($paddingLeft / $container-width);
+    padding-right: percentage($paddingRight / $container-width);
+  }
+}
+
+// Generate the small padding
+@mixin sy-make-sm-padding($paddingLeft, $paddingRight, $container-width) {
+  @media (min-width: $screen-sm-min) {
+    padding-left: percentage($paddingLeft / $container-width);
+    padding-right: percentage($paddingRight / $container-width);
+  }
+}
+
+// Generate the medium padding
+@mixin sy-make-md-padding($paddingLeft, $paddingRight, $container-width) {
+  @media (min-width: $screen-md-min) {
+    padding-left: percentage($paddingLeft / $container-width);
+    padding-right: percentage($paddingRight / $container-width);
+  }
+}
+
+// Generate the large padding
+@mixin sy-make-lg-padding($paddingLeft, $paddingRight, $container-width) {
+  @media (min-width: $screen-lg-min) {
+    padding-left: percentage($paddingLeft / $container-width);
+    padding-right: percentage($paddingRight / $container-width);
+  }
+}

@@ -1,0 +1,74 @@
+%active-btn {
+  // padding-top: 10px;
+  // padding-bottom: 10px;
+  margin-top: 2px;
+
+  // border-top-left-radius: 0;
+  // border-top-right-radius: 0;
+
+  // @extend %btn-base-primary;
+}
+
+.symphony-top-tickets-button {
+  float: right;
+
+  // color: #fff;
+
+  @extend %open-sans-condensed-700;
+
+  // @extend %gt-xb;
+
+  font-size: 20px;
+
+  @include padding(6px 20px 6px 20px);
+
+  // @include padding(em(27, 24) 46px em(27, 24) 46px);
+  // width: 232px;
+  @extend %btn-base;
+
+  // @extend %btn-base-primary; #5b2b62
+  // @include btn-color($syso-light-yellow, transparent, $syso-light-yellow);
+
+  color: $syso-light-yellow;
+  background-color: transparent;
+  border-color: $syso-light-yellow;
+
+  @include transition(all 0.25s ease-in-out);
+
+  &:hover,
+  &:focus {
+    color: $syso-brand;
+    background-color: $syso-light-yellow;
+    border-color: darken($syso-light-yellow, 12%);
+  }
+
+  // background-color: $syso-light-yellow;
+  // background-image: url(/module/symphony/svg/symphony-button-bg.svg);
+  // background-size: 100% auto;
+  // background-position: 50% 0;
+  // background-repeat: no-repeat;
+  text-align: center;
+  border-radius: 9px;
+  margin-top: 19px;
+
+  // transition: background-image 0.3s ease;
+
+  .sticky & {
+    @extend %active-btn;
+  }
+
+  @include breakpoint($tbMobile) {
+    margin-top: 2px;
+
+    // padding-top: 10px;
+    // padding-bottom: 10px;
+    // margin-top: 0;
+    // border-top-left-radius: 0;
+    // border-top-right-radius: 0;
+  }
+
+
+  //   @include breakpoint($homepageMobile) {
+  //   display: none;
+  // }
+}

@@ -1,0 +1,258 @@
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  @include inline-block(top, false);
+  // width: 100%;
+  height: $input-height-base;
+  // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  padding: $padding-base-vertical $padding-base-horizontal;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $brand-primary;
+  background-color: $input-bg;
+  background-image: none;
+  // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 2px solid lighten($input-border, 10%);
+  border-radius: $input-border-radius;
+  @include box-shadow(none);
+  @include transition(border-color 0.25s linear, background-color 0.25s linear, color 0.25s linear);
+  @include sy-form-control-focus;
+  // Placeholder
+  @include placeholder {
+    color: rgba(#000, 0.5);
+  }
+
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    background-color: $input-bg-disabled;
+    opacity: 1;
+    // iOS fix for unreadable disabled content
+ 
+  }
+  &.sy-form {
+    height: 44px;
+    // border-radius: 0;
+    margin-bottom: 21px;
+    border: 2px solid lighten($input-border, 5%);
+    padding: ($padding-base-vertical + 4px) $padding-base-horizontal;
+    @include transition(border 0.2s ease-in-out);
+    @include sy-form-control-focus($brand-primary);
+    &.thin {
+      height: 40px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Reset height for `textarea`s
+textarea {
+  height: auto;
+}
+
+textarea {
+  height: auto;
+}
+
+textarea.sy-form {
+  height: auto;
+}
+
+input.pretty-check {
+  display: none;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  font-size: 13px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  width: 100%;
+}
+
+input[type="radio"] + label i {
+  @include circle(19px);
+  cursor: pointer;
+  margin: 0 13px 0 0;
+  vertical-align: top;
+  background-color: #fff;
+  @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+input[type="radio"]:checked + label i {
+  &:before {
+    content: "";
+    @include circle(8px);
+    background-color: #1c1c1c;
+    margin-left: 5px;
+    margin-top: 6px;
+    float: left;
+  }
+}
+
+input[type="radio"]:disabled + label {
+  i {
+    &:before {
+      opacity: 0.2;
+    }
+  }
+  .checkbox-label {
+    opacity: 0.6;
+  }
+}
+
+input[type="checkbox"] + label i {
+  @include square(18px);
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 10px 0 0;
+  vertical-align: top;
+  background-color: #fff;
+  border: 1px $input-border solid;
+}
+
+input[type="checkbox"]:checked + label i {
+  @extend %syicon;
+  @extend %icon-checked;
+  &:before {
+    font-size: 11px;
+    // @include bg('checked.svg', no-repeat 0 0);
+    margin-left: 1px;
+    margin-top: 2px;
+    float: left;
+    color: $syso-orange;
+    // background-size: cover;
+ 
+  }
+}
+
+.checkbox-label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+#checkout-delivery-method-option {
+  margin-top: 8px;
+  .mobile-method-one {
+    width: 23.6%;
+    margin-right: 1.85%;
+    display: inline-block;
+    float: left;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  input[type="radio"] + label {
+    margin-bottom: 40px;
+    font-weight: normal;
+    display: block;
+  }
+  input[type="radio"] + label i {
+    border-radius: 0;
+    position: relative;
+    width: 100%;
+    height: 84px;
+    border: 1px solid $purpleBorder;
+    cursor: pointer;
+    margin: 0;
+    vertical-align: middle;
+    background-color: #fff;
+    @include box-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+    text-align: center;
+  }
+  input[type="radio"]:checked + label i {
+    border-radius: 0;
+    content: "";
+    width: 100%;
+    height: 84px;
+    background-color: $purple-bg;
+    border: 1px solid $purple-bg;
+    margin: 0;
+    .checkbox-label {
+      color: #fff;
+    }
+    &:before {
+      display: none;
+    }
+  }
+  .checkbox-label {
+    color: $purple-bg;
+    font-size: 13px;
+    line-height: 1.2em;
+    // font-family: $font-family-sans-serif;
+    text-align: center;
+    width: 100%;
+    height: 20%;
+  }
+}
+
+#order-receipt-billing-card-info, #order-receipt-shipping-method {
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// Pretty checkbox & radio
+// input[type="checkbox"] + label,
+// input[type="radio"] + label {
+//   cursor: pointer;
+//   @extend %nm-bc;
+//   margin-bottom: 0;
+//   &:hover,
+//   &:focus {
+//     color: $brand-primary;
+//   }
+//   i {
+//     cursor: pointer;
+//     margin-right: 5px;
+//     margin-left: 20px;
+//     vertical-align: top;
+//     border: 1px solid #000;
+//     border-radius: 1px;
+//     width: 11px;
+//     height: 12px;
+//     @include inline-block(middle, true);
+//     @include parent-hover {
+//       @include pseudo-elements(before, 11px, 12px) {
+//         background-color: $brand-primary;
+//         border-radius: 1px;
+//         margin-left: -1px;
+//         margin-top: -1px;
+//       }
+//     }
+//   }
+// }
+
+// input[type="radio"]:checked + label {
+//   color: $brand-primary;
+//   i {
+//     @include pseudo-elements(before, 11px, 12px) {
+//       background-color: $brand-primary;
+//       border-radius: 1px;
+//       margin-left: -1px;
+//       margin-top: -1px;
+//     }
+//   }
+// }
+
+// input[type="radio"]:disabled + label {
+//   i {
+//     &:before {
+//       opacity: 0.2;
+//     }
+//   }
+// }

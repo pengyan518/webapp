@@ -1,0 +1,160 @@
+/* Calculate fluid ratio based on two dimensions (width/height) */
+@mixin fluid-ratio($large-size, $small-size) {
+  $width-large: nth($large-size, 1);
+  $width-small: nth($small-size, 1);
+  $height-large: nth($large-size, 2);
+  $height-small: nth($small-size, 2);
+  $slope: ($height-large - $height-small) / ($width-large - $width-small);
+  $height: $height-small - $width-small * $slope;
+  padding-top: $slope * 100%;
+  height: $height;
+  background-size: cover;
+  -moz-background-size: cover;
+  /* Firefox 3.6 */
+  background-position: center;
+  /* Internet Explorer 7/8 */
+}
+
+// figure.fluidratio {
+//   /* This element will have fluid ratio from 4:1 at 800px to 2:1 at 300px.
+//   @include fluid-ratio(800px 200px, 300px 150px);
+//   background-image: url(#{$imgPath}/amsterdam.jpg);
+// }
+
+/*================ responsive-img-wrapper ================*/
+@mixin tb-img-responsive($display: block) {
+  display: $display;
+  width: 100%;
+  // Part 1: Set a maximum relative to the parent
+  height: auto;
+  // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+@mixin img-wrapper($width, $height, $container-width) {
+  width: 100%;
+  figure {
+    @include span($width of $container-width 0);
+    height: 0;
+    padding-bottom: percentage($height / $container-width);
+    overflow: hidden;
+    img {
+      @include tb-img-responsive;
+    }
+  }
+}
+
+@mixin img-wrapper-sm($width, $height, $container-width) {
+  & {
+    width: 100%;
+  }
+  figure {
+    @include sy-make-sm-column($width, $container-width);
+    height: 0;
+    padding-bottom: percentage($height / $width);
+    overflow: hidden;
+    @include breakpoint($screen-sm) {
+      padding-bottom: percentage($height / $container-width);
+    }
+
+    img {
+      @include tb-img-responsive;
+    }
+  }
+}
+
+@mixin figure-wrapper($width, $height, $container-width) {
+  width: percentage($width / $container-width);
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  a {
+    width: 100%;
+    height: 0;
+    display: block;
+    padding-bottom: percentage($height / $width);
+    img {
+      @include tb-img-responsive;
+    }
+  }
+}
+
+@mixin figure-wrapper-sm($width, $height, $container-width) {
+  @include sy-make-sm-column($width, $container-width);
+  a {
+    width: 100%;
+    height: 0;
+    display: block;
+    padding-bottom: percentage($height / $width);
+    img {
+      @include tb-img-responsive;
+    }
+  }
+}
+
+@mixin figure-wrapper-xs($width, $height, $container-width) {
+  @include span($width of $container-width 0);
+  overflow: hidden;
+  a {
+    width: 100%;
+    height: 0;
+    display: block;
+    padding-bottom: percentage($height / $width);
+    img {
+      @include tb-img-responsive;
+    }
+  }
+}
+
+@mixin figure-wrapper-svg($width, $height, $container-width) {
+  width: percentage($width / $container-width);
+  overflow: hidden;
+  display: inline-block;
+  a {
+    width: 100%;
+    height: 0;
+    display: block;
+    padding-bottom: percentage($height / $width);
+    img {
+      @include tb-img-responsive;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+  }
+}
+
+@mixin figure-wrapper-svg-shadow($width, $height, $container-width) {
+  width: percentage($width / $container-width);
+  display: inline-block;
+  a {
+    width: 100%;
+    height: 0;
+    display: block;
+    padding-bottom: percentage($height / $width);
+    img {
+      @include tb-img-responsive;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+  }
+}
+
+@mixin figure-wrapper-svg-bg($width, $height, $container-width) {
+  width: percentage($width / $container-width);
+  @include inline-block(middle, false);
+  > figure {
+    width: 100%;
+    height: 0;
+    display: block;
+    padding-bottom: percentage($height / $width);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+@mixin figure-lazy-wrapper($width, $height, $container-width) {
+  width: percentage($width / $container-width);
+  height: 0;
+  overflow: hidden;
+  display: block;
+  padding-bottom: percentage($height / $container-width);
+}

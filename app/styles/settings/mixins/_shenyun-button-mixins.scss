@@ -1,0 +1,99 @@
+@mixin button-color($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 12%);
+  }
+  &:active,
+  &.active {
+    background-image: none;
+  }
+  // &.disabled,
+  // &[disabled],
+  // fieldset[disabled] & {
+  //   &,
+  //   &:hover,
+  //   &:focus,
+  //   &.focus,
+  //   &:active,
+  //   &.active {
+  //     background-color: $background;
+  //         border-color: $border;
+  //   }
+  // }
+}
+
+@mixin btn-color($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 12%);
+  }
+}
+
+@mixin btn-o-color($border, $hover) {
+  border: 1px solid $border;
+  color: $border;
+  background-color: $hover;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $hover;
+    background-color: $border;
+  }
+}
+
+@mixin btn-o-style($border, $background) {
+  border: 1px solid $border;
+  color: $border;
+  background-color: $background;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $background;
+    background-color: $border;
+  }
+}
+
+@mixin btn-none-style($border, $background) {
+  // border: 1px solid transparent;
+  color: $border;
+  background-color: $background;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $background;
+    background-color: $border;
+  }
+}
+
+@mixin btn-solid-color($border, $hover) {
+  border: 2px solid transparent;
+  color: #fff;
+  background-color: $border;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $border;
+    background-color: $hover;
+    border-color: $border;
+  }
+}

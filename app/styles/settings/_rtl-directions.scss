@@ -1,0 +1,9 @@
+// RTL languages directions.
+
+$default-float: right;
+$opposite-float: left;
+
+$default-direction: rtl;
+$opposite-direction: ltr;
+
+$susy: (flow: $default-direction);

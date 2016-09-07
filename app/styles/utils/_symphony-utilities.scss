@@ -1,0 +1,214 @@
+/******************* font *******************/
+.syso-header-title {
+  font-size: 25px;
+  font-family: $nm-cmr;
+  margin-bottom: 1.2em;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+%tb-img-responsive {
+  @include tb-img-responsive;
+}
+
+/******************* Grid *******************/
+.tb-body-container-main {
+  font-size: 0.94em;
+
+  @include container-fixed;
+
+  @include breakpoint($tbBreak) {
+    // width: $container-sm;
+    width: 1000px;
+    padding: 0;
+  }
+
+
+  > .navbar-header,
+  > .navbar-collapse {
+    margin-right: -$navbar-padding-horizontal;
+    margin-left: -$navbar-padding-horizontal;
+
+    @include breakpoint($tbBreak) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}
+
+// The dropdown menu (ul)
+.syso-top-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: $zindex-dropdown;
+  display: none;
+
+  // none by default, but block on "open" of the menu
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+
+  // override default ul
+  list-style: none;
+  font-size: $font-size-base;
+  background-color: $dropdown-bg;
+
+  @include box-shadow(0 6px 12px rgba(0, 0, 0, 0.175));
+
+  background-clip: padding-box;
+
+  // opacity: 0;
+  // .transform(translateY(-10px));
+  // .transition(transform 0.4s, opacity 0.4s);
+  // Aligns the dropdown menu to right
+  //
+  // Deprecated as of 3.1.0 in favor of `.dropdown-menu-[dir]`
+  &.pull-right {
+    right: 0;
+    left: auto;
+  }
+
+  // Dividers (basically an hr) within the dropdown
+  .divider {
+    @include nav-divider($dropdown-divider-bg);
+  }
+
+  // Links within the dropdown menu
+  > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: $line-height-base;
+    color: $dropdown-link-color;
+    white-space: nowrap;
+
+    // prevent links from randomly breaking onto new lines
+ 
+  }
+}
+
+// Hover/Focus state
+.syso-top-dropdown > li > a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $dropdown-link-hover-color;
+    background-color: $dropdown-link-hover-bg;
+  }
+}
+
+// Active state
+.syso-top-dropdown > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    color: $dropdown-link-active-color;
+    text-decoration: none;
+    outline: 0;
+    background-color: $dropdown-link-active-bg;
+  }
+}
+
+.has-dropdown {
+  position: relative;
+
+  &.open {
+    .syso-top-dropdown {
+      display: block;
+
+      @include animation(fadeInUp 0.4s both ease-out);
+    }
+  }
+}
+
+.cycle-pager-wrapper {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  z-index: 100;
+  left: 0;
+  height: 25px;
+}
+
+#cycle-pager {
+  text-align: center;
+
+  span {
+    @include circle(9px);
+
+    @include hide-text;
+
+    background-color: #fff;
+    margin-right: 7px;
+    cursor: pointer;
+
+    @include box-shadow(0 0 6px 0 fade(#666, 40%));
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.cycle-pager-active {
+      background-color: #d57632;
+    }
+  }
+}
+
+// Horizontal description lists
+//
+// Defaults to being stacked without any of the below styles applied, until the
+// grid breakpoint is reached (default of ~768px).
+
+.syso-thumbnail {
+  display: block;
+
+  // padding: $thumbnail-padding;
+  margin-bottom: 5px;
+  line-height: $line-height-base;
+  background-color: $thumbnail-bg;
+  border: 1px solid $thumbnail-border;
+
+  // border-radius: $thumbnail-border-radius;
+  @include transition(all 0.2s ease-in-out);
+
+  > img,
+  a > img {
+    @extend %tb-img-responsive;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // Add a hover state for linked versions only
+  &:hover,
+  &:focus,
+  &.active {
+    border-color: $link-color;
+  }
+
+  // Image captions
+  .caption {
+    padding: $thumbnail-caption-padding;
+    color: $thumbnail-caption-color;
+  }
+}
+
+.img-horizontal-scroll-wrapper {
+  width: 100%;
+  margin-bottom: $line-height-computed * 0.75;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+
+.left-sm {
+  @extend %left;
+}
+
+.right-sm {
+  @extend %right;
+}

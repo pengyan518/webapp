@@ -1,0 +1,109 @@
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+body {
+  // @include font-size(14 / 16);
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 100%;
+
+  // background-color: #cd6f00;
+  // background-attachment: fixed;
+  // background-position: 50% 0;
+  // background-repeat: no-repeat;
+
+  &#symphony-tickets-index {
+    background-color: $syso-light-bg;
+
+    #section-program-schedule {
+      @extend %sm-pad;
+    }
+  }
+}
+
+ul, li {
+  list-style: none;
+}
+
+ul {
+  padding-left: 0;
+}
+
+#container {
+  width: 100%;
+  position: relative;
+}
+
+blockquote {
+  border-left: none;
+}
+
+q,
+blockquote {
+  quotes: none;
+}
+
+q:before,
+q:after {
+  content: '';
+}
+
+a {
+  outline: none;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+.overlay-mask {
+  // position: absolute;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#e4dcd2, 0.8);
+  z-index: 0;
+}
+
+// body, input, textarea, select, button {
+//   text-rendering: optimizeLegibility;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   -moz-font-feature-settings: "liga", "kern";
+// }
+
+// $susy: (
+//   flow: ltr,
+//   math: fluid,
+//   output: float,
+//   gutter-position: after,
+//   container: auto,
+//   container-position: center,
+//   columns: 4,
+//   gutters: .25,
+//   column-width: false,
+//   global-box-sizing: content-box,
+//   last-flow: to,
+//   debug: (
+//     image: hide,
+//     color: rgba(#66f, .25),
+//     output: background,
+//     toggle: top right,
+//   ),
+//   use-custom: (
+//     background-image: true,
+//     background-options: false,
+//     box-sizing: true,
+//     clearfix: false,
+//     rem: true,
+//   )
+// );

@@ -1,0 +1,309 @@
+/* purple -------------------------*/
+$purpleDivider: #cbc1ce;
+$purpleText: #5d3494;
+$purple-txt: #643a8a;
+$purple-bold-text: #5e3888;
+$purpleTag: #68449e;
+$purpleBg: $purpleTag;
+$purpleBtn: #512878;
+$purple-btn: #623a84;
+$purpleFormBorder: #693d94;
+$purpleBgForPopup: #481f6d;
+$purple-mobile-nav: #583a86;
+$purpleBar: #6840a0;
+
+$city-purple: #6f3485;
+$purpleTextLight: #cbbada;
+$purpleTextTitle: #59258b;
+$purpleBorder: #c9b4dc;
+$purple-bg: #65299c;
+$purple-tag-bg: #73489f;
+$purple-text-title: #70469d;
+$purple-arrow-txt: #693e93;
+
+/* yellow -------------------------*/
+$city-yellow: #fffec6;
+$yellow-light: #fff09f;
+$yellowlight: $city-yellow;
+$yellowGold: #e4dd95;
+$yellowBg: #fdfaf5;
+$yellowBtnBg: #eacb95;
+$yellowTitle: #fefad3;
+$yellowTitleFull: #f9eeba;
+$yellowTxt: #fff4ac;
+$yellowTxtLight: #f2ebd8;
+$yellow-txt: #f1edc7;
+
+$orangeBtnBg: #c66d31;
+$yellow-grey: #c2bc9c;
+$yellow-txt-light: #f8f9ce;
+$tour-listing-dl: #e4d796;
+$tour-listing-dl-hover: #f4edac;
+
+// $popupBg: #cd6f00;
+
+/* grey -------------------------*/
+$whiteGrey: #fbfaf4;
+$greyLine: #e9e9e9;
+$grey-txt: #47433b;
+$grey-bg-light: #f8f5ed;
+$tb-grey-text: #646161;
+$grey-bg: #e8e8e8;
+$grey-bg-purple: #f6f4f8;
+$grey-bg-yellow: #faf8f2;
+$grey-bg-gold: #c3a56c;
+$dark-gray: #47433b;
+
+/* blue -------------------------*/
+$main-blue-text: #00607d;
+$main-yellow-text: #ffd956;
+$blue-btn: #2d7c93;
+$tb-blue: #448DA3;
+$tb-blue-bg: #07617C;
+$tb-blue-btn: #2d7c93;
+$tb-blue-txt: #0b90ad;
+$blue-bg: #2a5db1;
+$tribeca-blue: #4a63ac;
+$tribeca-blue-text: #5369b1;
+$tribeca-blue-txt: #5369b1;
+$tribeca-pink: #ff6eac;
+$dropDownBg: #f9eedc;
+$sy-blue-btn: #0046a9;
+
+/* gold -------------------------*/
+$goldTxt: #ebce92;
+$gold-txt: #7c6447;
+$orangeTxt: #f5a862;
+$orangeBg: #db6a03;
+$defaultYellowTxt: #f9dea7;
+$gold-btn-txt: #a38d61;
+$gold-btn-border: #dfd7bc;
+$gold-border: #ede8d9;
+$gold-bg: #c6a358;
+$oriange-txt: #d07c20;
+
+/* brown -------------------------*/
+$brown-txt: #b3914b;
+$brown-txt2: #47433b;
+
+$falun-yellow-bg: #fcfaf7;
+$brown-yellow: #b09257;
+$brown-yellow2: #c09a56;
+$sy-brown-yellow: #7e590a;
+$sy-yellow-text: #fffccf;
+$btn-yellow-txt: #e4dc9f;
+$brownYellowTxt: #d1b283;
+$brownYellowBorder: #f9f0dd;
+$brown-text: #551604;
+$brownText: #541301;
+$brownText2: #732915;
+$brownText3: #420000;
+
+$brownText4: #8e7659;
+$brownText5: #998677;
+$brownYellowBorder2: #f5ede2;
+$symphony-brown: #983f00;
+$symphony-gold: #e9a121;
+$symphony-gold-text: #f6d275;
+
+/* orange -------------------------*/
+$orange-text: #d25201;
+$active-color: #d65402;
+$inactive-color: #d5c3b0;
+$orange-text2: #c84e04;
+
+$syso-text: #842f02;
+$syso-bg: #e4cfba;
+$syso-bg2: #feedd8;
+$syso-brown: #862f00;
+$syso-menu-text: #4d0000;
+$syso-orange: #e35b00;
+$syso-yelow: #ffb81d;
+$syso-brown-text: #592c00;
+
+/* red -------------------------*/
+$brown-red: #e3642d;
+
+/* divider -------------------------*/
+$dividerLine: #f6f2e7;
+$dividerLine2: #e7e7e3;
+$dividerLine3: #865033;
+$dividerLinePurple: #735289;
+$dividerLineYellow: #ebce92;
+$divider-gold: #ffecbd;
+$divider-yellow-grey: #ede8d8;
+$divider-timeline-grey: #dbd4bc;
+
+$city-border: #ddd;
+
+// $responsive-img-path: '/theme/shenyun/image/responsive/';
+
+/* Typography -------------------------*/
+// $open-sans: "Roboto Condensed";
+
+$open-sans-condensed: "open-sans-condensed", sans-serif;
+
+// $roboto-condensed: "Roboto Condensed";
+$roboto-condensed: $open-sans-condensed;
+$open-sans-condensed: $roboto-condensed;
+$open-sans: $roboto-condensed;
+
+// $open-sans-r: "opensansregular";
+
+// $nm-rc: 'nimbus_sans_nov_d_ot_condenRg', Arial, Verdana, sans-serif;
+
+$nm: $roboto-condensed;
+$nm-mc: $roboto-condensed;
+$nm-cmr: $roboto-condensed;
+
+// $nm-cr: "nimbus_sans_novus_d_otRgCn";
+// $nm-rc: "nimbus_sans_novus_d_otRgCn";
+$nm-cr: $roboto-condensed;
+$nm-rc: $roboto-condensed;
+$nm-bc: $roboto-condensed;
+
+$ta-pr: "trajanproregular";
+$ta-pb: "trajanprobold";
+
+$gtc-book: "GothamCondensedBook";
+$gtc-bold: "GothamCondBold";
+
+$gt-m: "GothamXNarrow-Medium";
+$gt-xm: "GothamXNarrow-Medium";
+$gt-xb: "GothamXNarrow-Book";
+$gt-xbo: "GothamXNarrowBold";
+
+// $gt-m: $open-sans-condensed;
+// $gt-xm: $open-sans-condensed;
+// $gt-xb: $open-sans-condensed;
+// $gt-xbo: $gtc-bold;
+$din-r: "DINProRegular";
+$din-m: "DINProMedium";
+$din-l: "DINProLight";
+$din-b: "DINProBold";
+
+$gt-bc: "gotham_htf_book_condensedRg";
+$gt-bb: "gotham_htf_condensedbold";
+
+$georgia: Georgia, "Times New Roman", Times, serif;
+$garamond: "EB Garamond";
+
+/* Brand colors  ------------------------- */
+$popupBg: #cd6f00 !default;
+$brand-primary: $purpleBg;
+$btn-primary-color: #fff;
+$submit: $syso-orange;
+
+$syso-brand: #5b2b62;
+$monkeyking: $syso-brand;
+$popupBg: $syso-brand;
+
+// $brand-primary: $city-purple;
+$btn-primary-bg: $purpleBg;
+$btn-primary-border: $btn-primary-bg;
+$syso-brand-light: #ffe7c3;
+$syso-brand-light-hover: #f7ad01;
+$syso-brown-bg: #481500;
+$syso-orange-bg: #ee8b1b;
+$brownText6: #000;
+$syso-light-bg: #fffbf3;
+$syso-inner-text: #5a5247;
+$syso-brand-dark: #3e0e45;
+$syso-light-yellow: #fddc76;
+$syso-light-yellow-hover: #fccf44;
+$video-title-text: #ae7e02;
+
+/* zindex  ------------------------- */
+$zindexDropdown: 1000;
+$zindexPopover: 1010;
+$zindexTooltip: 1030;
+$zindexFixedNavbar: 1030;
+$zindexModalBackdrop: 1040;
+$zindexModal: 1050;
+
+$border-radius-base: 2px;
+$input-border-radius: 2px;
+$border-radius-sy: 3px;
+
+//** Global textual link color.
+$link-color: $brand-primary;
+
+//** Link hover color set via `darken()` function.
+$link-hover-color: darken($link-color, 15%);
+
+//== Pagination
+//
+//##
+
+$pagination-color: $brand-primary;
+$pagination-active-bg: $brand-primary;
+$pagination-bg: #fff;
+$pagination-border: #ddd;
+
+$pagination-hover-color: $brand-primary;
+$pagination-active-border: $brand-primary;
+
+$docs-color: $brand-primary;
+
+/* $font-size-base: 13px;*/
+
+// $themes: "../../src/themes";
+$bootstrap: "../../../framework/bootstrap/sass/bootstrap" !default;
+$icon: "../../../font/icon/" !default;
+$font: "../../../font/" !default;
+$fancybox-path: "../../../library/fancybox/";
+$icon-font-path: "../../../framework/bootstrap3/fonts/";
+$fa-font-path: "../../../framework/font-awesome/fonts/";
+
+/* imgPath -------------------------*/
+$imagePath: "../img/";
+$imgPathV1: "../image/";
+
+/* imgPath -------------------------*/
+// $imgPath: "../img/" !default;
+$imgPath: "../../../theme/shenyun/image/symphony/";
+$svgPath: "../svg/";
+
+// image_path has been removed from libsass till it becomes part of the Sass spec. Till then you can add this snippet to a mixin sheet
+@function image-url($url) {
+  // basic function that returns the correct url
+  @return url("#{$imagePath}#{$url}");
+}
+
+@function svg-url($url) {
+  // basic function that returns the correct url
+  @return url("#{$svgPath}#{$url}");
+}
+
+@function font-url($url) {
+  // basic function that returns the correct url
+  @return url("#{$font}#{$url}");
+}
+
+$baseLineHeight: 12px;
+$baseBorderRadius: 4px;
+
+//** Border color for inputs on focus
+$input-border-focus: $brand-primary;
+$sy-gutter-width: 15px;
+
+$sy-breadcrumb-separator: ">";
+
+// $breakpoint-to-ems: true;
+@include breakpoint-set("to ems", true);
+
+$tbBreak: 768px;
+$tbMobile: 0 767px;
+$homepage-breakpoint: 900px;
+$homepage: 1020px;
+$homepageMobile: 0 1019px;
+$homepage-bt-max: 799px;
+$container-width: 1030px;
+$thumbnail-padding: 0;
+
+//** Thumbnail background color
+// $thumbnail-bg:                $body-bg !default;
+// //** Thumbnail border color
+// $thumbnail-border:            #ddd !default;
+//** Thumbnail border radius
+$thumbnail-border-radius: $border-radius-base;

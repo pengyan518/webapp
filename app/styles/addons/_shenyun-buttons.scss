@@ -1,0 +1,309 @@
+%btn-base {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: $btn-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+
+  // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+
+  // @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+  @include user-select(none);
+
+  @include transition(background-color 0.2s $ease-out-expo);
+
+  // &,
+  // &:active,
+  // &.active {
+  //   &:focus {
+  //     @include tab-focus;
+  //   }
+  // }
+
+  &:hover,
+  &:focus {
+    color: $btn-default-color;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+
+    @include box-shadow(inset 0 3px 5px rgba(0, 0, 0, 0.125));
+  }
+
+  // &.disabled,
+  // &[disabled],
+  // fieldset[disabled] & {
+  //   cursor: not-allowed;
+  //   pointer-events: none;
+  //   // Future-proof disabling of clicks
+  //   @include opacity(0.65);
+  //   @include box-shadow(none);
+  // }
+}
+
+%btn-solid-base {
+  @include inline-block(middle, false);
+
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+
+  @include user-select(none);
+
+  @include transition(background-color 0.3s $ease-out-expo);
+
+  // &,
+  // &:active,
+  // &.active {
+  //   &:focus {
+  //     @include tab-focus;
+  //   }
+  // }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+  }
+}
+
+%btn-base-primary {
+  @include btn-color(#fff, $btn-primary-bg, $btn-primary-border);
+}
+
+/* ================================ End button mixin================================ */
+// Base styles
+// --------------------------------------------------
+
+.btn-base {
+  @extend %btn-base;
+}
+
+/* General button style (reset) */
+/* OOCSS + Sass */
+%btn-o-base {
+  @include inline-block(middle, false);
+
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  background: none;
+
+  // @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+  @include user-select(none);
+
+  @include transition(background 0.3s $ease-in-out-expo);
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+  }
+}
+
+%btn-size-base {
+  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+}
+
+.btn-solid-base {
+  @extend %btn-solid-base;
+}
+
+/* btn-size */
+.btn-size-base {
+  @extend %btn-size-base;
+}
+
+%btn-size-sm {
+  @include button-size(2px, 28px, $font-size-base, $line-height-base, $border-radius-base);
+}
+
+.btn-size-sm {
+  @extend %btn-size-sm;
+}
+
+.btn-o-outline {
+  @include btn-o-color(#fff, $brand-primary);
+}
+
+.btn-o-solid {
+  @include btn-solid-color($city-purple, #fff);
+}
+
+.smooth {
+  @include transition(all 0.5s ease-in-out);
+}
+
+.button-buy-ticket {
+  @extend %btn-base;
+
+  @include btn-color(#fff, $brand-primary, darken($brand-primary, 10%));
+
+  @include button-size(11px, 0, 18px, $line-height-base, 2px);
+
+  text-shadow: 0 0 5px rgba(#000, 0.7);
+
+  // margin-bottom: 6px;
+  @extend %uppercase;
+
+  @extend %roboto-cb;
+}
+
+// a.button-buy-ticket {
+//   color: #FFF;
+// }
+
+.button-learn-more {
+  @extend %btn-o-base;
+
+  @include button-size(7px, 0, 12px, $line-height-base, 2px);
+
+  // @include btn-none-style(#7f4bc5, #fff);
+  color: $brand-primary;
+}
+
+.button,
+.button-primary {
+  @extend %btn-solid-base;
+
+  @extend %btn-base-primary;
+
+  @extend %btn-size-base;
+}
+
+.button-div-print {
+  @extend %btn-solid-base;
+
+  // @extend %btn-base-primary;
+  // @extend %btn-size-sm;
+}
+
+.syso-btn {
+  color: #fff;
+  font-size: 17px;
+  line-height: 1.294em;
+
+  @extend %roboto-cm;
+
+  background-color: #71479e;
+  padding: em(10, 17) em(14, 17);
+  text-shadow: none;
+  display: block;
+  float: left;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: darken(#71479e, 10%);
+    color: #fff;
+  }
+}
+
+%ticket-btn {
+  @extend %btn-base;
+
+  @include button-size(2px, 15px, 18px, $line-height-base, $border-radius-base);
+
+  @extend %btn-base-primary;
+
+  @include breakpoint(0 $screen-xs-max) {
+    width: 100%;
+    float: none;
+  }
+}
+
+.city-schedule-ticket-btn {
+  @extend %ticket-btn;
+
+  float: right;
+  margin-top: 4px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+
+  @include breakpoint($screen-sm) {
+    html[lang=en-us] & {
+      width: percentage(130 / 370);
+    }
+
+    html[lang=es] & {
+      width: percentage(164 / 370);
+    }
+
+    html[lang=zh-tw] &,
+    html[lang=zh-cn] & {
+      width: percentage(120 / 370);
+    }
+  }
+}
+
+#top-link-wrapper {
+  position: fixed;
+  right: 0;
+  z-index: 100;
+  width: 112px;
+  height: 113px;
+}
+
+.symphony-fixed-ticket-btn {
+  @extend %btn-solid-base;
+
+  @extend %btn-base-primary;
+
+  @include button-size(5px, 28px, 18px, $line-height-base, 0);
+
+  border-radius: $border-radius-base 0 0 $border-radius-base;
+
+  // position: fixed !important;
+  // bottom: 100px;
+  right: 0;
+  margin-top: 25px;
+
+  // display: none;
+
+  @extend %uppercase;
+
+  @extend %open-sans-condensed-700;
+
+  @include breakpoint($tbMobile) {
+    display: none !important;
+  }
+}
+
+.ticket-learn-more-btn {
+  @extend %btn-base;
+
+  @include btn-color(#fff, #e36b01, #e36b01);
+
+  @include button-size(7px, 43px, 18px, $line-height-base, $border-radius-base);
+
+  padding-bottom: 4px;
+  float: right;
+  margin-top: -10px;
+
+  @include breakpoint(0 $screen-xs-max) {
+    width: 100%;
+    float: none;
+    margin-top: -8px;
+  }
+}
+
+/* THE END */

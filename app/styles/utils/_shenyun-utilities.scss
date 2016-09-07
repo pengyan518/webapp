@@ -1,0 +1,192 @@
+.menu-trigger {
+  @extend .icon-glyphs;
+
+  // @extend .shenyun-glyphs-next;
+  float: right;
+  margin-top: 1px;
+  font-size: 14px;
+}
+
+.responsive-img {
+  @extend %full-width;
+}
+
+.response-img {
+  @include tb-img-responsive;
+}
+
+.shenyun-icon-play {
+  position: absolute;
+  bottom: 11px;
+  right: 11px;
+  color: #fff;
+  font-size: 27px;
+
+  @include transition(text-shadow 0.3s ease-out);
+}
+
+.thumbnail,
+.thumb {
+  @extend %video-thumb;
+}
+
+.hand {
+  cursor: pointer;
+}
+
+#cycle-pager {
+  @extend %cycle-pager;
+}
+
+#video-cycle-pager {
+  @extend %cycle-pager;
+
+  bottom: 16px;
+
+  span {
+    color: #fff;
+
+    &.cycle-pager-active {
+      background-color: #fff;
+    }
+  }
+}
+
+.play-icon {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+  padding: 6px 6px 6px 9px;
+  background-color: rgba(#000, 0.6);
+  text-align: center;
+}
+
+.vspace5,
+.vspace10,
+.vspace20,
+.vspace40 {
+  display: block;
+  clear: both;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.vspace5 {
+  height: 5px;
+}
+
+.vspace10 {
+  height: 10px;
+}
+
+.vspace20 {
+  height: 20px;
+}
+
+.vspace40 {
+  height: 40px;
+}
+
+.arrow-r8 {
+  @include caret-right(9px);
+}
+
+/* for FLOWPLAYER RWD 
+    ====STYLE="WIDTH:670PX;HEIGHT:378PX"====
+*/
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+
+  /* 16:9 */
+  height: 0;
+  cursor: pointer;
+  display: block;
+}
+
+.videoWrapper object,
+.videoWrapper embed,
+.videoWrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+%shadowed {
+  /* autoprefixer: off */
+
+  // FOR FIREFOX:
+  filter: url(../svg/shadow.svg#drop-shadow);
+  -webkit-filter: drop-shadow(0px 0px 10px #000);
+
+  // FOR IE:
+  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, \a \a Color='#444')";
+  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#444')";
+}
+
+.shadowed {
+  @extend %shadowed;
+}
+
+%text-glow {
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(#FFF, 0.9));
+
+  // FOR FIREFOX:
+  // filter: url(../svg/glow.svg#textglow);
+
+  // FOR IE:
+  // -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, \a \a Color='#444')";
+  // filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#444')";
+}
+
+.text-glow {
+  @extend %text-glow;
+}
+
+%outer-glow {
+  // -webkit-filter: drop-shadow(0px 0px 5px rgba(#000, 0.5));
+  // @include filter(drop-shadow(0px 0px 5px rgba(#000, 0.5)));
+
+  // FOR FIREFOX:
+  // filter: url(../svg/shadow.svg#drop-shadow-light);
+  -webkit-filter: drop-shadow(0px 0px 5px rgba(#fff, 0.5));
+
+  // FOR IE:
+  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, \a \a Color='#fff')";
+  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
+}
+
+.outer-glow {
+  @extend %outer-glow;
+}
+
+.svg-container {
+  @include inline-block(middle, false);
+
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+
+%triangle-base {
+  @include square(0);
+
+  @include inline-block(middle, true);
+
+  border-style: solid;
+  -webkit-transform: rotate(360deg);
+}
+
+.nav-prev {
+  @extend %triangle-base;
+
+  border-width: 5px 6px 5px 0;
+  border-color: transparent #fff transparent transparent;
+  margin-top: -1px;
+}

@@ -1,0 +1,145 @@
+.tb-cont {
+  @include container-fixed;
+
+  @include breakpoint($tbBreak) {
+    width: $container-sm;
+  }
+
+
+  @include breakpoint($screen-md) {
+    width: $container-md;
+  }
+
+
+  @include breakpoint($screen-lg) {
+    width: $container-lg;
+  }
+}
+
+.tb-cont-1k {
+  @include container-fixed;
+
+  @include breakpoint($tbBreak) {
+    max-width: 1000px;
+  }
+}
+
+.syso-cont {
+  @include container-fixed;
+
+  position: relative;
+
+  @include breakpoint($tbBreak) {
+    max-width: 1010px;
+  }
+}
+
+.syso-cont-fl {
+  @include container-fixed;
+
+  position: relative;
+
+  @include breakpoint($tbBreak) {
+    max-width: 853px;
+  }
+}
+
+.syso-main-cont {
+  @include container-fixed;
+
+  position: relative;
+
+  @include breakpoint($tbBreak) {
+    max-width: 1040px;
+  }
+}
+
+.sy-main-cont {
+  @include container-fixed;
+
+  position: relative;
+
+  @include breakpoint($tbBreak) {
+    max-width: 990px;
+  }
+}
+
+.syso-about-main-cont {
+  @include sy-make-cont-flex(960px, 20px);
+}
+
+.syso-banner-cont {
+  @include tb-make-cont(900px);
+}
+
+.syso-down-banner-cont,
+.syso-about-cont {
+  @include container(882px);
+}
+
+.syso-about-row {
+  @include tb-make-cont(900px);
+}
+
+.syso-quote-row {
+  @include tb-make-cont(960px);
+}
+
+#sy-bottom-nav-wrapper {
+  text-align: center;
+  background-color: #fff;
+}
+
+#sy-bottom-nav {
+  display: block;
+
+  @include font-size(1.875);
+
+  padding-top: percentage(100 / 970);
+  padding-bottom: percentage(170 / 970);
+
+  @include breakpoint($tbMobile) {
+    font-size: 16px;
+  }
+
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .nav-label {
+    color: #E2CEA6;
+
+    @extend %uppercase;
+  }
+
+  .nav-content {
+    margin-left: 1em;
+    color: #333;
+  }
+
+  .arrow-r8 {
+    color: #E2CEA6;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    .nav-label {
+      color: darken(#E2CEA6, 20%);
+    }
+
+    .nav-content {
+      color: #000;
+    }
+
+    .arrow-r8 {
+      color: darken(#E2CEA6, 20%);
+    }
+  }
+}
+
+.sy-article-paragraph {
+  @extend %sy-article-paragraph;
+}

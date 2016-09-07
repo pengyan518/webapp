@@ -1,0 +1,100 @@
+%mobile-block {
+  min-height: 1px;
+  width: 100%;
+}
+
+@mixin sm-col($width, $container-width, $marginRight, $marginLeft) {
+  @extend %mobile-block;
+
+  // Calculate width based on number of columns available
+  @include breakpoint(768px) {
+    float: left;
+    width: percentage($width / $container-width);
+
+    @if $marginRight and $marginRight != null {
+      margin-right: percentage($marginRight / $container-width);
+    }
+
+    @if $marginLeft and $marginLeft != null {
+      margin-left: percentage($marginLeft / $container-width);
+    }
+  }
+}
+
+@mixin sm-col-flex($width, $container-width, $oriantation, $marginRight, $marginLeft) {
+  @extend %mobile-block;
+
+  // Calculate width based on number of columns available
+  @include breakpoint(768px) {
+    float: $oriantation;
+    width: percentage($width / $container-width);
+
+    @if $marginRight and $marginRight != null {
+      margin-right: percentage($marginRight / $container-width);
+    }
+
+    @if $marginLeft and $marginLeft != null {
+      margin-left: percentage($marginLeft / $container-width);
+    }
+  }
+}
+
+@mixin xs-sm-col($width, $widthMobile, $container-width, $marginRight, $marginLeft, $float: true) {
+  // float: left;
+  width: percentage($widthMobile / $container-width);
+
+  @if $float {
+    float: $float;
+  }
+
+  @else {
+    @include inline-block(top, true);
+  }
+
+  @include breakpoint(768px) {
+    width: percentage($width / $container-width);
+
+    @if $marginRight and $marginRight != null {
+      margin-right: percentage($marginRight / $container-width);
+    }
+
+    @if $marginLeft and $marginLeft != null {
+      margin-left: percentage($marginLeft / $container-width);
+    }
+  }
+}
+
+@mixin md-col($width, $container-width, $marginRight, $marginLeft) {
+  @extend %mobile-block;
+
+  // Calculate width based on number of columns available
+  @include breakpoint($screen-md) {
+    float: left;
+    width: percentage($width / $container-width);
+
+    @if $marginRight and $marginRight != null {
+      margin-right: percentage($marginRight / $container-width);
+    }
+
+    @if $marginLeft and $marginLeft != null {
+      margin-left: percentage($marginLeft / $container-width);
+    }
+  }
+}
+
+@mixin md-col-flex($width, $container-width, $oriantation, $marginRight, $marginLeft) {
+  @extend %mobile-block;
+
+  @include breakpoint($screen-md) {
+    float: $oriantation;
+    width: percentage($width / $container-width);
+
+    @if $marginRight and $marginRight != null {
+      margin-right: percentage($marginRight / $container-width);
+    }
+
+    @if $marginLeft and $marginLeft != null {
+      margin-left: percentage($marginLeft / $container-width);
+    }
+  }
+}

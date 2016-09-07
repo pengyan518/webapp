@@ -1,0 +1,225 @@
+//
+// Mixins
+// --------------------------------------------------
+@import "mixins/shenyun-container-mixins";
+@import "mixins/shenyun-column-mixins";
+@import "mixins/shenyun-span-mixins";
+@import "mixins/shenyun-figure-mixins";
+@import "mixins/shenyun-button-mixins";
+
+/*================ background responsive-img-url ================*/
+@mixin bg($img, $setting) {
+  background: url($imgPath + $img) $setting;
+}
+
+// @mixin bg-v1($img, $setting) {
+//   background: url($imgPathV1 + $img) $setting;
+// }
+
+@mixin bg-img($img) {
+  background-image: url(#{$imgPath}#{$img});
+}
+
+@mixin bgsvg($img, $setting) {
+  background: url($imgPath + $img) $setting;
+}
+
+@mixin bg-svg($img) {
+  background-image: url(#{$svgPath}#{$img});
+}
+
+// @mixin bg-responsive($imgName, $extension, $setting) {
+//   background: url('#{$imgPath}#{$imgName}@2x.#{$extension}') $setting;
+// }
+// @mixin bg-img-responsive($imgName, $extension) {
+//   background-image: url('#{$imgPath}#{$imgName}@2x.#{$extension}');
+// }
+
+@mixin circle($size) {
+  border-radius: 100%;
+  display: inline-block;
+  width: $size;
+  height: $size;
+}
+
+@mixin content($display: block) {
+  content: "";
+  display: $display;
+  visibility: visible;
+  position: absolute;
+}
+
+/******************* caret *******************/
+%caret-base {
+  @include inline-block(middle, true);
+  padding: 0;
+  @include square(0);
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+.caret-base {
+  @extend %caret-base;
+}
+
+@mixin caret-bottom($caret-width-base) {
+  @extend %caret-base;
+  border-left: $caret-width-base solid transparent;
+  border-right: $caret-width-base solid transparent;
+  border-top: $caret-width-base solid;
+}
+
+@mixin caret-top($caret-width-base) {
+  @extend %caret-base;
+  border-left: $caret-width-base solid transparent;
+  border-right: $caret-width-base solid transparent;
+  border-bottom: $caret-width-base solid;
+}
+
+@mixin caret-left($caret-width-base) {
+  @extend %caret-base;
+  border-top: $caret-width-base solid transparent;
+  border-bottom: $caret-width-base solid transparent;
+  border-right: $caret-width-base solid;
+}
+
+@mixin caret-right($caret-width-base) {
+  @extend %caret-base;
+  border-top: $caret-width-base solid transparent;
+  border-bottom: $caret-width-base solid transparent;
+  border-left: $caret-width-base solid;
+}
+
+/* ================================ fixed the REM bug in IE8 down ================================ */
+/*http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/*/
+
+@mixin font-size($remValue) {
+  // font-size: $remValue * 16 + px;
+  font-size: #{$remValue * 16}px;
+  // font-size: $remValue + rem;
+  font-size: #{$remValue}rem;
+}
+
+@mixin float-sm($orientation) {
+  @include breakpoint($screen-sm) {
+    float: $orientation;
+  }
+}
+
+@mixin float-lg($orientation) {
+  @include breakpoint($screen-lg) {
+    float: $orientation;
+  }
+}
+
+@mixin sm-width($width) {
+  width: 100%;
+  @include breakpoint($screen-sm) {
+    width: $width;
+  }
+}
+
+@mixin sy-form-control-focus($color: $input-border-focus) {
+  $color-rgba: rgba(red($color), green($color), blue($color), 0.6);
+  &:focus {
+    border-color: $color;
+    border-width: 2px;
+    outline: 0;
+    // @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $color-rgba);
+ 
+  }
+}
+
+@mixin placeholder {
+  $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+      @content;
+    }
+  }
+}
+
+@mixin icon-player($fontValue, $adjustment) {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  font-size: #{$fontValue}px;
+  margin-top: -($fontValue / 2) + px;
+  margin-left: -($fontValue / 2 + $adjustment) + px;
+}
+
+@mixin svg-loading-spinner($size, $adjustment) {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  @include square(#{$size}px);
+  margin-top: -($size / 2) + px;
+  margin-left: -($size / 2 + $adjustment) + px;
+}
+
+@mixin icon-glyphs($fontIcon) {
+  font-family: $fontIcon;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin about-hero-img-responsive($width, $height, $wrapper-width, $left-position) {
+  @extend %hero-img;
+  padding-bottom: percentage($height / $width);
+  @include min-screen($screen-sm) {
+    left: $left-position;
+    width: percentage($width / $wrapper-width);
+    padding-bottom: percentage($height / $wrapper-width);
+  }
+}
+
+@mixin btn-color($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 12%);
+  }
+}
+
+@mixin sy-btn($marginBottom: 0, $fontSize: 18px, $background: $purpleBg, $color: #fff) {
+  @include inline-block(middle, true);
+  margin-bottom: $marginBottom;
+  // For input.btn
+  font-size: $fontSize;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  *border: 0;
+  // Remove the border to prevent IE7's black border on input:focus
+  background: $background;
+  color: $color;
+  padding: 14px 80px;
+  // Hover/focus state
+  &:hover,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+    background: darken($purpleBg, 10%);
+    @include transition(all 0.5s ease-out);
+  }
+}
+
+/* ==========================================================================
+END
+========================================================================== */

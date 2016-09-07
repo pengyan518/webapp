@@ -1,0 +1,105 @@
+/* ================================ make wrapper container ================================ */
+
+@mixin sy-make-cont($width) {
+  @include container-fixed;
+
+  @include breakpoint($screen-sm) {
+    max-width: $width + $grid-gutter-width;
+  }
+}
+
+@mixin sy-make-wrapper($width) {
+  @include container-fixed;
+
+  position: relative;
+
+  @include breakpoint($screen-sm) {
+    @include container($width);
+
+    @include pad(0, 0);
+  }
+}
+
+@mixin tb-make-cont($width) {
+  @include container-fixed;
+
+  @include breakpoint($screen-sm) {
+    max-width: $width + $grid-gutter-width;
+  }
+}
+
+// Centered container element
+@mixin sy-container-fixed($sy-gutter-width) {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: $sy-gutter-width;
+  padding-right: $sy-gutter-width;
+
+  @include clearfix;
+}
+
+@mixin desktop-container($width, $sy-gutter-width) {
+  margin-right: auto;
+  margin-left: auto;
+
+  @include breakpoint($tbBreak) {
+    padding-left: $sy-gutter-width;
+    padding-right: $sy-gutter-width;
+    max-width: $width;
+  }
+}
+
+@mixin inner-container($width) {
+  // margin-right: auto;
+  // margin-left: auto;
+  // max-width: $width;
+  @include container($width);
+}
+
+@mixin sy-container-fixed-sm($sy-gutter-width) {
+  margin-right: auto;
+  margin-left: auto;
+
+  @include clearfix;
+
+  @include breakpoint($tbMobile) {
+    padding-left: $sy-gutter-width;
+    padding-right: $sy-gutter-width;
+  }
+}
+
+@mixin sy-make-cont-flex($width, $sy-gutter-width) {
+  @include sy-container-fixed($sy-gutter-width);
+
+  @include breakpoint($tbBreak) {
+    max-width: $width + $sy-gutter-width * 2 + px;
+  }
+}
+
+@mixin sy-flex-wrapper($width, $sy-gutter-width, $breakPoint) {
+  @include container-fixed($sy-gutter-width * 2);
+
+  @include box-sizing(border-box);
+
+  @include breakpoint($breakPoint) {
+    max-width: $width + $sy-gutter-width * 2;
+  }
+}
+
+@mixin flex-wrapper($width, $sy-gutter-width, $breakPoint) {
+  @include container-fixed;
+
+  @include box-sizing(border-box);
+
+  @include breakpoint($breakPoint) {
+    padding-left: $sy-gutter-width;
+    padding-right: $sy-gutter-width;
+    max-width: $width + $sy-gutter-width * 2;
+  }
+}
+
+@mixin ipad-bleed($bleed: 15px) {
+  @include ipad {
+    @include pad($bleed);
+  }
+}
