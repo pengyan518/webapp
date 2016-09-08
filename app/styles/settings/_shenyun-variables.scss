@@ -143,7 +143,7 @@ $city-border: #ddd;
 
 $open-sans-condensed: "open-sans-condensed", sans-serif;
 
-$roboto-condensed: "Roboto Condensed";
+$roboto-condensed: "Roboto Condensed", sans-serif;
 $roboto: "Roboto", sans-serif;
 $open-sans-condensed: $roboto-condensed;
 $open-sans: $roboto-condensed;
@@ -255,7 +255,7 @@ $fa-font-path: "../../../framework/font-awesome/fonts/";
 
 /* imgPath -------------------------*/
 $imagePath: "../img/";
-$imgPathV1: "../image/";
+$imgPathV1: "../images/";
 
 /* imgPath -------------------------*/
 // $imgPath: "../img/" !default;
@@ -265,7 +265,7 @@ $svgPath: "../svg/";
 // image_path has been removed from libsass till it becomes part of the Sass spec. Till then you can add this snippet to a mixin sheet
 @function image-url($url) {
   // basic function that returns the correct url
-  @return url("#{$imagePath}#{$url}");
+  @return url("#{$imgPathV1}#{$url}");
 }
 
 @function svg-url($url) {

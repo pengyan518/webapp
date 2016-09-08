@@ -32,20 +32,42 @@
   @extend %sm-pad;
 }
 
-#wal-top-video-share-btn {
-  @extend %open-sans-condensed-300;
+%top-btn {
+  @extend %roboto-cd-700;
 
   @extend %uppercase;
 
-  // background-color: rgba(180, 148, 65, 0.65);
+  background-color: rgba(#4196cc, 0.8);
   border-color: transparent;
-  padding: 5px 28px;
+  padding: 10px 23px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-shadow: 0 1px 3px #000;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    border-color: #fff;
+  }
+
+  @include breakpoint($tbMobile) {
+    width: 100%;
+    display: block;
+  }
+}
+
+.header-video-link {
+  @extend %top-btn;
+}
+
+#wal-top-video-share-btn {
+  @extend %top-btn;
 }
 
 #wal-video-share-area-placeholder {
   display: none;
   position: absolute;
-  top: 40px;
+  top: 20px;
   left: 0;
   margin-left: 2px;
 
@@ -54,6 +76,10 @@
   }
 
 
+  #wal-video-share-area {
+    font-size: 0;
+  }
+
   .shenyun-glyphs {
     // color: #a6a391;
     color: $syso-light-yellow;
@@ -61,7 +87,7 @@
     text-decoration: none;
     display: inline-block;
 
-    @include pad(5px);
+    @include pad(3px);
 
     &:first-child {
       @include breakpoint($tbBreak) {
@@ -86,8 +112,7 @@
   float: right;
   padding-top: 10px;
   margin-left: 6px;
-
-  // min-height: 100px;
+  min-height: 46px;
   min-width: 150px;
 
   @include breakpoint($tbMobile) {

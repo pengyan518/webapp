@@ -107,6 +107,22 @@
   font-weight: 900;
 }
 
+%roboto-cd {
+  font-family: $roboto-condensed;
+}
+
+%roboto-cd-400 {
+  @extend %roboto-cd;
+
+  font-weight: 400;
+}
+
+%roboto-cd-700 {
+  @extend %roboto-cd;
+
+  font-weight: 700;
+}
+
 %nm-bc {
   @extend %open-sans-condensed-700;
 }

@@ -27,6 +27,7 @@ $icon-font-path: "../fonts/";
 @import "settings/shenyun-mixins";
 @import "utils/shenyun-clearfix";
 @import "utils/shenyun-placeholder";
+@import "utils/shenyun-utilities";
 @import "addons/shenyun-icon";
 
 @import "layouts/header";
@@ -57,9 +58,6 @@ body {
 }
 
 /* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
 
 /* Custom page footer */
 .footer {
@@ -107,9 +105,6 @@ body {
   }
 
   /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
 
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {

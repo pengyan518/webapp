@@ -1,0 +1,40 @@
+.video-area {
+  background-color: #1a1b1d;
+  text-align: center;
+
+  .wrapper {
+    @include container(960px);
+  }
+}
+
+.video-caption {
+  .wrapper {
+    @include container(898px);
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      margin-top: 27px;
+      margin-bottom: 13px;
+    }
+
+    .winner-img-wrapper {
+      @extend %full-width;
+
+      margin-bottom: 18px;
+
+      img {
+        @include img-responsive;
+      }
+    }
+  }
+}
+
+.main-container {
+  background-color: #f5f7f6;
+
+  .wrapper {
+    @include container(760px);
+  }
+}
