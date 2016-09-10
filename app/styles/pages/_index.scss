@@ -2,6 +2,11 @@
   background-color: #1a1b1d;
   text-align: center;
 
+  @include breakpoint($tbBreak) {
+    padding-top: 67px;
+  }
+
+
   .wrapper {
     @include container(960px);
   }
@@ -60,9 +65,9 @@
     @extend %sm-pad;
 
     p {
-      font-size: 24px;
+      font-size: 20px;
       line-height: em(35, 24);
-      font-weight: 300;
+      font-weight: 200;
     }
 
     .high-line {
@@ -72,8 +77,9 @@
     }
 
     h3 {
+      font-size: 20px;
       margin-top: 58px;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
   }
 }

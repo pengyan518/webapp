@@ -1,6 +1,14 @@
 .header {
   min-height: 66px;
   background-color: #0266b4;
+  z-index: 1;
+
+  @extend %full-width;
+
+  @include breakpoint($tbBreak) {
+    position: fixed;
+  }
+
 
   .wrapper {
     @include container(964px);
@@ -15,6 +23,8 @@
 
   padding-top: 15px;
   float: left;
+
+  @extend %roboto-cd-700;
 
   @include pre(span(22 of 964 0));
 
